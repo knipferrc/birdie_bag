@@ -1,4 +1,4 @@
-package com.knipferdev.birdie_bag
+package com.knipferdev.birdiebag
 
 import io.flutter.embedding.android.FlutterActivity
 
