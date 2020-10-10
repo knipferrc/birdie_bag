@@ -19,12 +19,12 @@ class InputField extends StatelessWidget {
       children: [
         Text(
           labelText,
-          style: labelStyle,
+          style: kLabelStyle,
         ),
         SizedBox(height: 10.0),
         Container(
           alignment: Alignment.centerLeft,
-          decoration: boxDecorationStyle,
+          decoration: kBoxDecorationStyle,
           height: 50.0,
           child: TextFormField(
             keyboardType: TextInputType.emailAddress,
@@ -41,7 +41,7 @@ class InputField extends StatelessWidget {
                 color: Colors.white,
               ),
               hintText: hintText,
-              hintStyle: hintTextStyle,
+              hintStyle: kHintTextStyle,
             ),
           ),
         ),
