@@ -46,7 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
           child: Stack(
-            children: <Widget>[
+            children: [
               Container(
                 height: double.infinity,
                 width: double.infinity,
@@ -74,7 +74,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
+                    children: [
                       Text(
                         'Sign In',
                         style: TextStyle(

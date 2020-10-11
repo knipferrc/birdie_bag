@@ -1,5 +1,6 @@
 import 'package:birdie_bag/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -7,6 +8,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int _selectedIndex = 0;
+
   SliverToBoxAdapter _buildHeader(double screenHeight) {
     return SliverToBoxAdapter(
         child: Container(
@@ -78,10 +81,46 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           Text("Favorites",
               style:
-                  const TextStyle(fontSize: 22.0, fontWeight: FontWeight.bold))
+                  const TextStyle(fontSize: 22.0, fontWeight: FontWeight.bold)),
+          const SizedBox(height: 15.0),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                children: [
+                  Text("Hades"),
+                ],
+              ),
+              Column(
+                children: [
+                  Text("Hades"),
+                ],
+              ),
+              Column(
+                children: [
+                  Text("Hades"),
+                ],
+              )
+            ],
+          )
         ],
       ),
     ));
+  }
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+
+    if (index == 0 && _selectedIndex != 0) {
+      Navigator.pushNamed(context, '/');
+    } else if (index == 1) {
+      Navigator.pushNamed(context, "/login");
+      setState(() {
+        _selectedIndex = 0;
+      });
+    }
   }
 
   @override
@@ -93,6 +132,25 @@ class _HomeScreenState extends State<HomeScreen> {
       body: CustomScrollView(
         physics: ClampingScrollPhysics(),
         slivers: [_buildHeader(screenHeight), _buildFavorites(screenHeight)],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.business),
+            label: 'Business',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.school),
+            label: 'School',
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.blue[800],
+        onTap: _onItemTapped,
       ),
     );
   }
