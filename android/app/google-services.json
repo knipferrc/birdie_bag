@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "643068733291",
+    "firebase_url": "https://birdiebag-fb96d.firebaseio.com",
+    "project_id": "birdiebag-fb96d",
+    "storage_bucket": "birdiebag-fb96d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:643068733291:android:dc8272376e5ecb43284e2e",
+        "android_client_info": {
+          "package_name": "com.knipferdev.birdie_bag"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "643068733291-3dbdjt5drbkhu1f46quc2lf8u5dm17at.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATCVzFxFxvuDFQggaQPNpFx3FziVrfn7g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "643068733291-3dbdjt5drbkhu1f46quc2lf8u5dm17at.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
