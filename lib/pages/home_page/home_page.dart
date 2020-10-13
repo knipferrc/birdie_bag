@@ -1,14 +1,13 @@
-import 'package:birdie_bag/widgets/custom_bottom_navigation.dart';
 import 'package:birdie_bag/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomePage extends StatefulWidget {
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomePageState extends State<HomePage> {
   SliverToBoxAdapter _buildHeader(double screenHeight) {
     return SliverToBoxAdapter(
         child: Container(
@@ -116,7 +115,6 @@ class _HomeScreenState extends State<HomeScreen> {
         body: CustomScrollView(
           physics: ClampingScrollPhysics(),
           slivers: [_buildHeader(screenHeight), _buildFavorites(screenHeight)],
-        ),
-        bottomNavigationBar: CustomBottomNavigation());
+        ));
   }
 }

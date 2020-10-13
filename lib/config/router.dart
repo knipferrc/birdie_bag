@@ -1,11 +1,7 @@
-import 'package:birdie_bag/screens/home_screen.dart';
-import 'package:birdie_bag/screens/login_screen.dart';
-import 'package:birdie_bag/screens/my_bag_screen.dart';
-import 'package:birdie_bag/screens/profile_screen.dart';
+import 'package:birdie_bag/pages/login_page/login_page.dart';
+import 'package:birdie_bag/pages/root_page.dart';
 
 Object appRoutes = {
-  "/": (context) => HomeScreen(),
-  "/login": (context) => LoginScreen(),
-  "/profile": (context) => ProfileScreen(),
-  "/my-bag": (context) => MyBagScreen(),
+  "/": (context) => RootPage(),
+  "/login": (context) => LoginPage(),
 };
