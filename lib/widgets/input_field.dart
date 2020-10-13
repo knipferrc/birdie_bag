@@ -31,7 +31,6 @@ class InputField extends StatelessWidget {
             obscureText: obscureText ? true : false,
             style: TextStyle(
               color: Colors.white,
-              fontFamily: 'OpenSans',
             ),
             decoration: InputDecoration(
               border: InputBorder.none,

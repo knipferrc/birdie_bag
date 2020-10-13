@@ -2,26 +2,26 @@ import 'package:birdie_bag/widgets/input_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class LoginPage extends StatefulWidget {
+class RegisterPage extends StatefulWidget {
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _RegisterPageState createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
-  Widget _buildSignInButton() {
+class _RegisterPageState extends State<RegisterPage> {
+  Widget _buildSignUpButton() {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 25.0),
       width: double.infinity,
       child: RaisedButton(
         elevation: 5.0,
-        onPressed: () => print('Sign In Button Pressed'),
+        onPressed: () => print('Sign Up Button Pressed'),
         padding: EdgeInsets.all(15.0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0),
         ),
         color: Colors.white,
         child: Text(
-          'Sign In',
+          'Sign Up',
           style: TextStyle(
             color: Colors.blue[700],
             fontSize: 18.0,
@@ -75,7 +75,7 @@ class _LoginPageState extends State<LoginPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Sign In',
+                        'Sign Up',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 30.0,
@@ -98,7 +98,7 @@ class _LoginPageState extends State<LoginPage> {
                         icon: Icons.lock,
                         obscureText: true,
                       ),
-                      _buildSignInButton()
+                      _buildSignUpButton()
                     ],
                   ),
                 ),

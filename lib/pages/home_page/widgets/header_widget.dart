@@ -1,4 +1,5 @@
 import 'package:birdie_bag/pages/login_page/login_page.dart';
+import 'package:birdie_bag/pages/register_page/register_page.dart';
 import 'package:flutter/material.dart';
 
 class HeaderWidget extends StatelessWidget {
@@ -40,11 +41,15 @@ class HeaderWidget extends StatelessWidget {
               FlatButton.icon(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30.0)),
-                color: Colors.red,
-                onPressed: () {},
-                icon: const Icon(Icons.open_in_new, color: Colors.white),
-                label: Text("View Bag"),
-                textColor: Colors.white,
+                color: Colors.white,
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return RegisterPage();
+                  }));
+                },
+                icon: const Icon(Icons.open_in_new, color: Colors.blue),
+                label: Text("Sign Up"),
+                textColor: Colors.blue,
               ),
               SizedBox(width: 10.0),
               FlatButton.icon(
@@ -57,7 +62,7 @@ class HeaderWidget extends StatelessWidget {
                   }));
                 },
                 icon: const Icon(Icons.login, color: Colors.white),
-                label: Text("Login"),
+                label: Text("Sign In"),
                 textColor: Colors.white,
               )
             ],
