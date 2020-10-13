@@ -1,6 +1,7 @@
 import 'package:birdie_bag/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:birdie_bag/pages/login_page/login_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -57,7 +58,9 @@ class _HomePageState extends State<HomePage> {
                     borderRadius: BorderRadius.circular(30.0)),
                 color: Colors.grey[700],
                 onPressed: () {
-                  Navigator.pushNamed(context, '/login');
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return LoginPage();
+                  }));
                 },
                 icon: const Icon(Icons.login, color: Colors.white),
                 label: Text("Login"),

@@ -1,4 +1,5 @@
-import 'package:birdie_bag/config/router.dart';
+import 'package:birdie_bag/pages/login_page/login_page.dart';
+import 'package:birdie_bag/pages/root_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -26,8 +27,12 @@ class BirdieBagApp extends StatelessWidget {
           return MaterialApp(
             title: 'Birdie Bag',
             debugShowCheckedModeBanner: false,
-            initialRoute: '/',
-            routes: appRoutes,
+            home: Navigator(
+              pages: [
+                MaterialPage(key: ValueKey("RootPage"), child: RootPage()),
+              ],
+              onPopPage: (route, result) => route.didPop(result),
+            ),
           );
         }
 
