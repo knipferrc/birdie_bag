@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:birdie_bag/utils/styles.dart';
+import 'package:birdie_bag/config/styles.dart';
 
 class InputField extends StatelessWidget {
   final String labelText;

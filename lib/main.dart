@@ -1,21 +1,39 @@
-import 'package:birdie_bag/utils/router.dart';
+import 'package:birdie_bag/config/router.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() async {
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
   runApp(BirdieBagApp());
 }
 
 class BirdieBagApp extends StatelessWidget {
+  final Future<FirebaseApp> _initialization = Firebase.initializeApp();
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Birdie Bag',
-      debugShowCheckedModeBanner: false,
-      initialRoute: '/',
-      routes: appRoutes,
+    return FutureBuilder(
+      // Initialize FlutterFire:
+      future: _initialization,
+      builder: (context, snapshot) {
+        // Check for errors
+        if (snapshot.hasError) {
+          return Container();
+        }
+
+        // Once complete, show your application
+        if (snapshot.connectionState == ConnectionState.done) {
+          return MaterialApp(
+            title: 'Birdie Bag',
+            debugShowCheckedModeBanner: false,
+            initialRoute: '/',
+            routes: appRoutes,
+          );
+        }
+
+        // Otherwise, show something whilst waiting for initialization to complete
+        return Container();
+      },
     );
   }
 }

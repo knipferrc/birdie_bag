@@ -1,0 +1,20 @@
+import 'package:birdie_bag/widgets/custom_bottom_navigation.dart';
+import 'package:flutter/material.dart';
+
+class ProfileScreen extends StatefulWidget {
+  @override
+  _ProfileScreenState createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.blue,
+      ),
+      body: Container(child: Text("My Bag")),
+      bottomNavigationBar: CustomBottomNavigation(),
+    );
+  }
+}
