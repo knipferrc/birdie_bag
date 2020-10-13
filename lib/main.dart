@@ -19,7 +19,9 @@ class BirdieBagApp extends StatelessWidget {
       builder: (context, snapshot) {
         // Check for errors
         if (snapshot.hasError) {
-          return Container();
+          return Container(
+            child: Text("Error Occured!"),
+          );
         }
 
         // Once complete, show your application
@@ -37,7 +39,7 @@ class BirdieBagApp extends StatelessWidget {
         }
 
         // Otherwise, show something whilst waiting for initialization to complete
-        return Container();
+        return CircularProgressIndicator();
       },
     );
   }
